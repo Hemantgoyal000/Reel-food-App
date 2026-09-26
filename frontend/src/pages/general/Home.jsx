@@ -47,7 +47,7 @@ const Home = () => {
     return (
         <ReelFeed
             items={videos}
-            onLike={likeVideo} 
+            onLike={likeVideo}
             onSave={saveVideo}
             emptyMessage="No videos available."
         />
