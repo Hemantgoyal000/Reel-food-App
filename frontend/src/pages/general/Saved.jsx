@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../../styles/reels.css'
 import axios from 'axios'
-import ReelFeed from '../../components/ReelFeed'
+import ReelFeed from '../../Components/ReelFeed'
 
 const Saved = () => {
     const [ videos, setVideos ] = useState([])
