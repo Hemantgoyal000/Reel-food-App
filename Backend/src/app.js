@@ -8,9 +8,20 @@ const foodPartnerRoutes = require('./routes/food-partner.routes');
 const cors = require('cors');
 
 
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://reel-food-app-frontend.onrender.com',
+];
+
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin(origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error(`CORS blocked for origin: ${origin}`));
+        }
+    },
     credentials: true,
 }));
 app.use(cookieParser());
