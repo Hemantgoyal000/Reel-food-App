@@ -13,7 +13,7 @@ const FoodPartnerLogin = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const response = await axios.post("https://reel-food-app-backend.onrender.com/auth/food-partner/login", {
+    const response = await axios.post("https://reel-food-app-backend.onrender.com/api/auth/food-partner/login", {
       email,
       password
     }, { withCredentials: true });
